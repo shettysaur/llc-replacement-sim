@@ -27,7 +27,7 @@ for entry in `ls $FILES`; do
 	((i=i%N)); ((i++==0)) && wait
 	file="${FILES}${entry}"
 	outfile="$(basename $entry .trace.gz )"
-	run_with_lock ./shipmaxshct4-config2 -warmup_instructions 10000000 -simulation_instructions 100000000 -traces $file > "results/shipmaxshct4/$outfile.out" &
+	run_with_lock ./set-duel-14bit-config2 -warmup_instructions 10000000 -simulation_instructions 100000000 -traces $file > "results/set-duel-14bit/$outfile.out" &
 #	run_with_lock ./red_64kb-config2 -warmup_instructions 10000000 -simulation_instructions 100000000 -traces $file > "results/red_64kb/$outfile.out" &
 #	echo "${FILES}${entry}"
 done
